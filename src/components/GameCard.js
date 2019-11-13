@@ -1,17 +1,17 @@
 import React from "react";
 
-const GameCard = () => (
+const GameCard = ({ game }) => (
     <div  className="ui card">
         <div className="image">
-            <span className="ui green ribbon label">$49.50</span>
-            <img src="https://www.mmoga.com/images/games/_ext/1134215/swtor-gamecard-prepaid-90-days_large.png" 
+<span className="ui green ribbon label">${game.price}</span>
+            <img src={game.thumbnail}
             alt="Game cover"/>
     </div>
     <div className="content">
-        <a href="#" className="header">Old Republic</a>
+<a href="#" className="header">{game.name}</a>
         <div className="metal"> 
-        <i className="icon user" />2-4&nbsp;
-        <i className="icon wait" />60 min
+        <i className="icon users" />{game.players}&nbsp;
+        <i className="icon wait" />{game.durations}min,
         </div>
         </div>
     </div>
