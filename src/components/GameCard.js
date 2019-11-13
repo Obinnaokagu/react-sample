@@ -11,7 +11,7 @@ const GameCard = ({ game }) => (
 <a href="#" className="header">{game.name}</a>
         <div className="metal"> 
         <i className="icon users" />{game.players}&nbsp;
-        <i className="icon wait" />{game.durations}min,
+        <i className="icon wait" />{game.durations}min.
         </div>
         </div>
     </div>
