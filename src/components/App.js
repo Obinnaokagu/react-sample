@@ -22,9 +22,9 @@ const games = [
     },
     {
         _id: 3,
-        name: "LEAGUE Of LEGENDS",
+        name: "BATTLEGROUNDS",
         price: 5025,
-        thumbnail: "https://media.gamestop.com/i/gamestop/10116415/League-of-Legends-$50-Game-Card?$zoom$",
+        thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpbPAL0edrN22lffrixO2oxT2AsbPcD-LAGWegwz3sNx9hzSL7&s",
         players: "2-6",
         duration: 85,
     },
@@ -37,11 +37,27 @@ const games = [
         duration: 95,
     }
 ]
-const App = () => (
-    <div className="ui container">
-        <GamesList games={games} />
-    </div>
-);
+
+class App extends React.Component {
+    state = {
+        games: []
+    };
+
+    componentDidMount() {
+        this.setState({ games });
+    }
+
+    render() {
+        
+        return(
+            <div className="ui container">
+            <GamesList games={this.state.games} />
+        </div>
+        );
+    }
+    
+}
+
 
 
 
