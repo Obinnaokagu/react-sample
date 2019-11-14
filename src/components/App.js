@@ -1,6 +1,7 @@
 import React from "react";
 import GamesList from "./GamesList";
 
+// const games = undefined;
 
 const games = [
     {

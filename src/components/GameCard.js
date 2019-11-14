@@ -4,7 +4,7 @@ import propTypes from "prop-types"
 const GameCard = ({ game }) => (
     <div  className="ui card">
         <div className="image">
-<span className="ui green ribbon label">${game.price}</span>
+<span className="ui green ribbon label">${game.price} {game.price < 5050 && "!"}</span>
             <img src={game.thumbnail}
             alt="Game cover"/>
     </div>
