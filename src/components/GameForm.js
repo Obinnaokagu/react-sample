@@ -4,7 +4,10 @@ class GameForm extends Component {
 
     state = {
         name: '',
-        description: ""
+        description: "",
+        price: 0,
+        duration: 0,
+        players: ""
     }
 
   handleSubmit = e => {
@@ -12,7 +15,8 @@ class GameForm extends Component {
     console.log(this.state)
   };
 
-  handleChange = e => this.setState({ [e.target.name]: e.target.value });
+  handleStringChange = e => this.setState({ [e.target.name]: e.target.value });
+  handleNumberChange = e => this.setState({ [e.target.name]: parseInt(e.target.value, 10) });
 
 
   render() {
@@ -26,7 +30,7 @@ class GameForm extends Component {
             name="name"
             placeholder="Full game title"
             value={this.state.name}
-            onChange = {this.handleChange}
+            onChange = {this.handleStringChange}
           />
         </div>
 
@@ -38,8 +42,42 @@ class GameForm extends Component {
             name="description"
             placeholder="Game Description"
             value={this.state.description}
-            onChange = {this.handleChange}
+            onChange = {this.handleStringChange}
           />
+        </div>
+
+        <div className="three fields">
+        <div className="field">
+          <label htmlFor="price">price (in cents)</label>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            value={this.state.price}
+            onChange = {this.handleNumberChange}
+          />
+        </div>
+
+        <div className="field">
+          <label htmlFor="duration">duration(in min)</label>
+          <input
+            type="number"
+            id="duration"
+            name="duration"
+            value={this.state.duration}
+            onChange = {this.handleNumberChange}
+          />
+        </div>
+        <div className="field">
+          <label htmlFor="players">players</label>
+          <input
+            type="text"
+            id="players"
+            name="players"
+            value={this.state.players}
+            onChange = {this.handleStringChange}
+          />
+        </div>
         </div>
 
         <button className="ui primary button" type="submit">
